@@ -1,0 +1,15 @@
+services:
+  runner:
+    image: myoung34/github-runner:latest
+    container_name: quickbite-runner
+    restart: unless-stopped
+    user: root
+    environment:
+      REPO_URL: https://github.com/thvhdvy/NguyenHuuThanh_JB-IOC-260310_DevOps_SS07_Gioi02
+      ACCESS_TOKEN: ${ACCESS_TOKEN}
+      RUNNER_NAME: quickbite-runner-01
+      RUNNER_WORKDIR: /opt/quickbite-runner
+      LABELS: quickbite
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/quickbite-runner:/opt/quickbite-runner

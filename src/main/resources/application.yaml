@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: restaurant-service
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/quickbite_restaurant_db}
+    username: ${DB_USER:quickbite}
+    password: ${DB_PASSWORD:quickbite}
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: ${PORT:8082}
+
+management:
+  endpoints:
+    web:
+      base-path: /api/v1/restaurants/actuator
+      exposure:
+        include: health

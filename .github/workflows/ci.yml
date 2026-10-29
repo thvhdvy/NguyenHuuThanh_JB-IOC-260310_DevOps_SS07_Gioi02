@@ -23,7 +23,7 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew build -x test
-docker-check:
+  docker-check:
     runs-on: [self-hosted, quickbite]
     steps:
       - uses: actions/checkout@v4
